@@ -1,0 +1,37 @@
+pod fastapi-599ccc764d-6xqnc:
+
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     10.42.0.1:59650 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:59650 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.1:59664 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:59664 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.1:47658 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:47658 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.8:52720 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.8:52720 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+
+pod fastapi-599ccc764d-dzk5d:
+
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     10.42.0.1:43614 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:43614 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.8:41910 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+
+pod fastapi-599ccc764d-8kz24:
+
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     10.42.0.1:9471 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:9471 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.1:2081 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.1:2081 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.8:55366 - "GET /count HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.8:37384 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
