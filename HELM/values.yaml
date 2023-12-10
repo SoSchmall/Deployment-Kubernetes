@@ -1,0 +1,35 @@
+appName: pgadmin-helm
+fastapiName: fastapi
+fastapiNodeport: fastapinodeport
+namespace: helm
+pvcName: postgres-pv-claim-helm
+storageClassName: stclassname-helm
+pvName: postgres-pv-helm
+
+image:
+  name: vikinghacker/fastapi_app
+  tag: "latest"
+
+ingress:
+  pgadmin:
+    name: ingress-pgadmin
+    pgadminHost: pgadmin.hackerblog.cloudns.ph
+    className: traefik
+    path: /
+    pathType: Prefix
+    port: 8080
+  fastapi:
+    nameFastapi: ingress-fastapi
+    fastapiHost: hackerblog.cloudns.ph
+    className: traefik
+    pathFastapi: /
+    pathUsersFastapi: /users
+    pathUsersCountFastapi: /users/count
+    pathTypeFastapi: Prefix
+    portFastapi: 5000
+
+tls:
+  secretNamePgadmin: letsencrypt-prod
+  secretNameFastapi: letsencrypt-prod2
+
+clusterIssuerName: letsencrypt-prod

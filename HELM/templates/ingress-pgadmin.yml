@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.ingress.pgadmin.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    cert-manager.io/cluster-issuer: {{ .Values.clusterIssuerName }}
+spec:
+  tls:
+  - hosts:
+    - {{ .Values.ingress.pgadmin.pgadminHost }}
+    secretName: {{ .Values.tls.secretNamePgadmin }}
+  ingressClassName: {{ .Values.ingress.pgadmin.className }}
+  rules:
+  - host: {{ .Values.ingress.pgadmin.pgadminHost }}
+    http:
+      paths:
+      - path: {{ .Values.ingress.pgadmin.path }}
+        pathType: {{ .Values.ingress.pgadmin.pathType }}
+        backend:
+          service:
+            name: {{ .Values.appName }}
+            port:
+              number: {{ .Values.ingress.pgadmin.port }}
