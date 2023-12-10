@@ -7,9 +7,9 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   ports:
-    - name: "5000"
-      port: 5000
-      targetPort: 5000
+    - name: {{ .Values.ingress.fastapi.portFastapiName }}
+      port: {{ .Values.ingress.fastapi.portFastapi }}
+      targetPort: {{ .Values.ingress.fastapi.portFastapi }}
   selector:
     app: {{ .Values.fastapiName }}
 status:

@@ -20,8 +20,8 @@ spec:
         - image: "{{ .Values.image.name }}:{{ .Values.image.tag }}" 
           name: {{ .Values.fastapiName }}
           ports:
-            - containerPort: 5000
-              protocol: TCP
+            - containerPort: {{ .Values.ingress.fastapi.portFastapi }}
+              protocol: {{ .Values.ingress.fastapi.protocol }}
           resources: {}
       restartPolicy: Always
 status: {}

@@ -1,14 +1,25 @@
 appName: pgadmin-helm
 fastapiName: fastapi
 fastapiNodeport: fastapinodeport
+hpaName: fastapi-hpa
 namespace: helm
 pvcName: postgres-pv-claim-helm
 storageClassName: stclassname-helm
 pvName: postgres-pv-helm
+dbAppName: db
+databaseServicePortName: "5432"
+databaseServicePort: 5432
+
+database:
+  name: storedb
+  secretName: postgresql-database-password
+  secretKey: password
+  user: admin
 
 image:
   name: vikinghacker/fastapi_app
   tag: "latest"
+  pullPolicy: "IfNotPresent"
 
 ingress:
   pgadmin:
@@ -26,7 +37,9 @@ ingress:
     pathUsersFastapi: /users
     pathUsersCountFastapi: /users/count
     pathTypeFastapi: Prefix
+    portFastapiName: "5000"
     portFastapi: 5000
+    protocol: TCP
 
 tls:
   secretNamePgadmin: letsencrypt-prod

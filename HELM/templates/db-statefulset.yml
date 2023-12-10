@@ -1,37 +1,37 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: db
+  name: {{ .Values.dbAppName }}
   namespace: {{ .Values.namespace }}
 spec:
   replicas: 1
-  serviceName: db
+  serviceName: {{ .Values.dbAppName }}
   selector:
     matchLabels:
-      app: db
+      app: {{ .Values.dbAppName }}
   template:
     metadata:
       labels:
-        app: db
+        app: {{ .Values.dbAppName }}
     spec:   
       containers:
         - name: postgres
           image: postgres:12.0-alpine
-          imagePullPolicy: "IfNotPresent"  
+          imagePullPolicy: {{ .Values.image.pullPolicy }}  
           ports:
-            - containerPort: 5432        
+            - containerPort: {{ .Values.databaseServicePort }}        
           env:
             - name: POSTGRES_DB
-              value: storedb
+              value: {{ .Values.database.name }}
             - name: POSTGRES_HOST_AUTH_METHOD
               value: trust
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgresql-database-password
-                  key: password
+                  name: {{ .Values.database.secretName }}
+                  key: {{ .Values.database.secretKey }}
             - name: POSTGRES_USER
-              value: admin
+              value: {{ .Values.database.user }}
           resources: {}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
