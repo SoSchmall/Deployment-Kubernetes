@@ -32,4 +32,4 @@ tls:
   secretNamePgadmin: letsencrypt-prod
   secretNameFastapi: letsencrypt-prod2
 
-clusterIssuerName: letsencrypt-prod
+clusterIssuerName: letsencrypt-prod 

@@ -28,7 +28,7 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgresql-fastapi-userpass
+                  name: postgresql-database-password
                   key: password
             - name: POSTGRES_USER
               value: admin
