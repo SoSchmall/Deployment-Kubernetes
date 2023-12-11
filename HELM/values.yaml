@@ -10,11 +10,27 @@ dbAppName: db
 databaseServicePortName: "5432"
 databaseServicePort: 5432
 
+pgadminDeployment:
+  defaultEmail: admin@admin.com
+  secretName: postgresql-pgadmin-userpass
+  secretKey: password
+  password: cm9vdA==
+  image: dpage/pgadmin4
+  containerPort: 80
+  containerProtocol: TCP
+  restartPolicy: Always
+
+pgadminService:
+  pgadminServicePortName: "8080"
+  pgadminServicePort: 8080
+  pgadminTargetPort: 80
+
 database:
   name: storedb
   secretName: postgresql-database-password
   secretKey: password
   user: admin
+  password: cGFzc3dvcmQ=
 
 image:
   name: vikinghacker/fastapi_app
