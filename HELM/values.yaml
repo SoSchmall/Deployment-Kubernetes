@@ -7,7 +7,7 @@ pvcName: postgres-pv-claim-helm
 storageClassName: stclassname-helm
 pvName: postgres-pv-helm
 dbAppName: db
-databaseServicePortName: "5432"
+databaseServicePortName: databaseport
 databaseServicePort: 5432
 
 pgadminDeployment:
@@ -21,7 +21,7 @@ pgadminDeployment:
   restartPolicy: Always
 
 pgadminService:
-  pgadminServicePortName: "8080"
+  pgadminServicePortName: pgadminport
   pgadminServicePort: 8080
   pgadminTargetPort: 80
 
@@ -53,7 +53,7 @@ ingress:
     pathUsersFastapi: /users
     pathUsersCountFastapi: /users/count
     pathTypeFastapi: Prefix
-    portFastapiName: "5000"
+    portFastapiName: fastapiport
     portFastapi: 5000
     protocol: TCP
 
