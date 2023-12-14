@@ -2,21 +2,21 @@
 
 ## Introduction
 This project contains three microservices:
-    * A service for FastApi application.
-    * A PostgresSQL database.
-    * PGAdmin, an administration interface for managing the databases.
+* A service for FastApi application.
+* A PostgresSQL database.
+* PGAdmin, an administration interface for managing the databases.
 
 The primary goal of this project is to deploy the application using three different methods:
-    * Deploying in a standard way.
-    * Deploying with Helm.
-    * Deploying with Kustomize.
+* Deploying in a standard way.
+* Deploying with Helm.
+* Deploying with Kustomize.
 
 
 There are three repositories for deploying these services:
 
-    * YAML-STANDARD
-    * HELM
-    * kustomize
+* YAML-STANDARD
+* HELM
+* kustomize
 
 
 ## YAML-STANDARD
