@@ -1,0 +1,16 @@
+namespace: kustomize
+
+resources:
+- clusterissuer.yml
+- db-service.yml
+- db-statefulset.yml
+- fastapi-deployment.yml
+- fastapi-nodeport.yml
+- fastapi-service.yml
+- hpa.yml
+- ingress-fastapi.yml
+- pgadmin-deployment.yml
+- ingress-pgadmin.yml
+- pgadmin-nodeport.yml
+- pgadmin-service.yml
+- postgres-data-persistentvolumeclaim.yml

@@ -1,0 +1,6 @@
+resources:
+- ../../base
+- secret-db.yml
+- secret-pgadmin.yml
+
+namespace: staging
